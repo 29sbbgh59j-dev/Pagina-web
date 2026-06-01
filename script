@@ -1,0 +1,39 @@
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Lógica del Carrito de Compras (Simulación)
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const cartCountElement = document.getElementById('cart-count');
+    let cartItems = 0;
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            cartItems++;
+            cartCountElement.innerText = cartItems;
+            
+            // Efecto visual al agregar
+            button.innerText = "¡Agregado!";
+            button.style.backgroundColor = "var(--taupe)";
+            
+            setTimeout(() => {
+                button.innerText = "Agregar al carrito";
+                button.style.backgroundColor = "var(--marron-claro)";
+            }, 1500);
+        });
+    });
+
+    // 2. Desplazamiento suave para los enlaces del menú
+    const links = document.querySelectorAll('.nav-links a');
+
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            window.scrollTo({
+                top: targetElement.offsetTop - 80, // Compensa la altura del menú fijo
+                behavior: 'smooth'
+            });
+        });
+    });
+});
