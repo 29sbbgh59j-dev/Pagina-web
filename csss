@@ -1,0 +1,287 @@
+/* --- VARIABLES DE MARCA --- */
+:root {
+    /* Paleta de colores solicitada */
+    --beige-arena: #D8C3A5;
+    --crema-suave: #F5F0E8;
+    --marron-claro: #B89B7A;
+    --taupe: #A89988;
+    --dorado-suave: #C9A66B;
+    --blanco-roto: #FAF8F4;
+    --texto-oscuro: #333333;
+
+    /* Tipografías */
+    --font-titulos: 'Playfair Display', serif;
+    --font-textos: 'Montserrat', sans-serif;
+}
+
+/* --- RESET BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-textos);
+    background-color: var(--blanco-roto);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+}
+
+h1, h2, h3, .logo {
+    font-family: var(--font-titulos);
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- NAVEGACIÓN --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    background-color: var(--blanco-roto);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--marron-claro);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--dorado-suave);
+}
+
+.cart-icon {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* --- BOTONES --- */
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-textos);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--marron-claro);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--taupe);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--marron-claro);
+    color: var(--marron-claro);
+}
+
+.btn-secondary:hover {
+    background-color: var(--crema-suave);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 80vh;
+    background-color: var(--crema-suave);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    /* Aquí se colocaría la imagen de fondo elegante */
+    /* background-image: url('tu-imagen-hero.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: var(--marron-claro);
+    margin-bottom: 1rem;
+    max-width: 800px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--taupe);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* --- BENEFICIOS --- */
+.benefits {
+    display: flex;
+    justify-content: space-around;
+    padding: 4rem 5%;
+    background-color: var(--blanco-roto);
+    text-align: center;
+}
+
+.benefit-item h3 {
+    color: var(--marron-claro);
+    margin-bottom: 0.5rem;
+}
+
+.benefit-item p {
+    font-size: 0.9rem;
+    color: var(--taupe);
+}
+
+/* --- CATÁLOGO / DESTACADOS --- */
+.featured-products {
+    padding: 5rem 5%;
+    background-color: var(--crema-suave);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--marron-claro);
+    margin-bottom: 3rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background-color: var(--blanco-roto);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.placeholder-img {
+    height: 350px;
+    background-color: var(--beige-arena);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.product-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    color: var(--dorado-suave);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+/* --- HISTORIA --- */
+.story {
+    padding: 6rem 5%;
+    text-align: center;
+    background-color: var(--blanco-roto);
+}
+
+.story-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.story-content p {
+    font-size: 1.1rem;
+    color: var(--taupe);
+    line-height: 1.8;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--marron-claro);
+    color: var(--crema-suave);
+    padding: 4rem 5% 1rem 5%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-brand h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    color: var(--dorado-suave);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid var(--taupe);
+    padding-top: 1rem;
+    font-size: 0.8rem;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .benefits {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
